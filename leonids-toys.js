@@ -29,7 +29,7 @@ const toys = [
 // }
 
 const lightsaber = {
-    id: 4,
+    // id: 4,
     name: "Darth Vader's Lightsaber",
     brand: "Hasbro",
     color: "Red/Silver",
@@ -38,15 +38,15 @@ const lightsaber = {
 }
 
 const bionicle = {
-    id: 5,
+    // id: 5,
     name: "Bionicle Tahu",
     brand: "Lego",
     color: "Gold/Red",
     type: "Action Figure",
     price: 20,
 }
-toys.push(lightsaber)
-toys.push(bionicle)
+// toys.push(lightsaber)
+// toys.push(bionicle)
 
 // for (const toy of toys) {
 //     console.log(`The ${toy.color} ${toy.brand} ${toy.name} costs $${toy.price} dollars.`)
@@ -58,8 +58,27 @@ for (const toy of toys) {
 
 const toyToFind = 2
 
-for (const toy of toys) {
-    if (toy.id === toyToFind) {
-        console.log(`The ${toy.brand} ${toy.name} costs ${toy.price} dollars. It is ${toy.color}.`)
-    }
+// for (const toy of toys) {
+//     if (toy.id === toyToFind) {
+//         console.log(`The ${toy.brand} ${toy.name} costs ${toy.price} dollars. It is ${toy.color}.`)
+//     }
+// }
+
+const addToyToInventory = (toyObject) => {
+    const lastIndex = toys.length - 1
+    const currentLastToy = toys[lastIndex]
+    const maxId = currentLastToy.id
+    const idForNewToy = maxId + 1
+
+    toyObject.id = idForNewToy
+    toys.push(toyObject)
 }
+
+addToyToInventory(lightsaber)
+addToyToInventory(bionicle)
+
+for (const toy of toys) {
+    console.log(`The ${toy.brand} ${toy.name} costs ${toy.price} dollars. It is ${toy.color}.`)
+}
+
+console.log(toys)
