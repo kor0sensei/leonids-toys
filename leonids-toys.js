@@ -24,6 +24,9 @@ const toys = [
         price: 30
     }
 ]
+// for (const toy of toys) {
+//     console.log(`It's name is ${toy.name}`)
+// }
 
 const lightsaber = {
     id: 4,
@@ -45,10 +48,18 @@ const bionicle = {
 toys.push(lightsaber)
 toys.push(bionicle)
 
+// for (const toy of toys) {
+//     console.log(`The ${toy.color} ${toy.brand} ${toy.name} costs $${toy.price} dollars.`)
+// }
+
 for (const toy of toys) {
     toy.price = toy.price + toy.price * .05
 }
 
+const toyToFind = 2
+
 for (const toy of toys) {
-    console.log(`The ${toy.color} ${toy.brand} ${toy.name} costs $${toy.price} dollars.`)
+    if (toy.id === toyToFind) {
+        console.log(`The ${toy.brand} ${toy.name} costs ${toy.price} dollars. It is ${toy.color}.`)
+    }
 }
